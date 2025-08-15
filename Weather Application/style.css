@@ -1,0 +1,246 @@
+/* 🌐 Reset and Global */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #00feba, #5b548a);
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+body.dark {
+  background: linear-gradient(135deg, #1e1e1e, #444);
+  color: #fff;
+}
+
+/* 🌤️ App Container */
+.app {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  padding: 30px;
+  width: 90%;
+  max-width: 420px;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+  animation: fadeIn 0.8s ease-in;
+}
+
+/* 🔝 Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.toggle-mode {
+  border: none;
+  background: transparent;
+  font-size: 24px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.toggle-mode:hover {
+  transform: scale(1.2);
+}
+
+/* 🔍 Search */
+.search {
+  display: flex;
+  margin: 20px 0;
+}
+
+.search input {
+  flex: 1;
+  padding: 12px 20px;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+
+.search button {
+  margin-left: 10px;
+  border: none;
+  background: #ebfffc;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s;
+}
+.search button:hover {
+  background: #d3f8f5;
+}
+
+.search button img {
+  width: 20px;
+}
+
+/* ❌ Error */
+.error {
+  display: none;
+  font-size: 14px;
+  color: #ff4d4d;
+  margin-bottom: 10px;
+}
+
+/* 🌦️ Weather Card */
+.weather {
+  display: none;
+  animation: fadeIn 1s ease-in;
+}
+
+.weather-icon {
+  width: 120px;
+  margin: 15px 0;
+}
+
+.weather h1 {
+  font-size: 60px;
+}
+
+.weather h2 {
+  font-size: 28px;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+
+.feels {
+  margin-top: 5px;
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+/* 📊 Weather Details */
+.details {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 25px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.col {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  flex: 1;
+  min-width: 120px;
+}
+
+.col img {
+  width: 28px;
+  margin-right: 10px;
+}
+
+/* 🕘 Suggestions (Recent Searches) */
+.suggestions {
+  margin-bottom: 15px;
+  text-align: left;
+  display: none; /* hidden until history exists */
+}
+
+.suggestions h3 {
+  font-size: 14px;
+  margin-bottom: 5px;
+  opacity: 0.8;
+}
+
+.suggestions ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.suggestions li {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 6px 12px;
+  border-radius: 15px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+.suggestions li:hover {
+  background: rgba(255, 255, 255, 0.35);
+  transform: scale(1.05);
+}
+
+/* 🔽 Autocomplete Dropdown */
+.autocomplete {
+  list-style: none;
+  margin-top: 5px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 5px 0;
+  max-height: 150px;
+  overflow-y: auto;
+  display: none;
+}
+
+.autocomplete li {
+  padding: 8px 15px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.autocomplete li:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* 🎞️ Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 📱 Mobile Responsive */
+@media (max-width: 600px) {
+  .app {
+    padding: 20px;
+  }
+
+  .weather h1 {
+    font-size: 45px;
+  }
+
+  .weather h2 {
+    font-size: 22px;
+  }
+
+  .feels {
+    font-size: 16px;
+  }
+
+  .details {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .col {
+    justify-content: flex-start;
+    width: 100%;
+  }
+
+  .search {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .search button {
+    margin-left: 0;
+    align-self: center;
+  }
+}
