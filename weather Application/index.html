@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App 2025</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>🌤️ Weather Now</h1>
+      <button class="toggle-mode">🌙</button>
+    </header>
+
+    <div class="search">
+      <input type="text" spellcheck="false" placeholder="Search city...">
+      <button><img src="images/search.png" alt="Search"></button>
+    </div>
+
+    <div class="error">
+      <p>❌ Invalid City Name</p>
+    </div>
+
+    <div class="weather">
+      <img class="weather-icon" src="images/clear.png" alt="">
+      <h1 class="temp">--°C</h1>
+      <h2 class="city">City Name</h2>
+      <p class="country"></p>
+
+      <div class="details">
+        <div class="col">
+          <img src="images/humidity.png" alt="">
+          <div>
+            <p class="humidity">--%</p>
+            <p>Humidity</p>
+          </div>
+        </div>
+        <div class="col">
+          <img src="images/wind.png" alt="">
+          <div>
+            <p class="wind">-- km/h</p>
+            <p>Wind Speed</p>
+          </div>
+        </div>
+        <div class="col">
+          <img src="images/thermometer.png" alt="">
+          <div>
+            <p class="feels">--°C</p>
+            <p>Feels Like</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
